@@ -1,0 +1,27 @@
+right_format = "$time"
+
+[character]
+success_symbol = "[→](bold green)"
+error_symbol = "[✕](bold red)"
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+empty_symbol = " "
+disabled = false
+
+[[battery.display]]
+threshold = 80
+style = "bold red"
+
+[time]
+format = "[ $time](bold red)"
+time_format = "%T"
+disabled = false
+
+[shell]
+powershell_indicator = "🪟"
+unknown_indicator = "mystery shell"
+style = "cyan bold"
+disabled = false
