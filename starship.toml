@@ -1,0 +1,113 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](black)\
+$shell\
+$localip\
+$directory\
+[ ](black)\
+$git_branch\
+$git_status\
+$docker_context\
+$nodejs\
+$bun\
+$rust\
+$python\
+$fill\
+[ ](black)\
+$battery\
+[](black)
+$character\
+"""
+
+#main-prompt
+[character]
+success_symbol = "[→](bold green)"
+error_symbol = "[→](bold red)"
+disabled = false
+
+[shell]
+zsh_indicator = "🌹"
+nu_indicator = "💐"
+powershell_indicator = "🌸"
+unknown_indicator = "❓"
+style = "bg:black"
+format = "[$indicator ]($style)"
+disabled = false
+
+[directory]
+truncation_length = 3
+read_only = "🔒"
+read_only_style = "yellow"
+style = "fg:purple bg:black"
+format = "[$path ]($style)($lock_symbol)($lock_style)"
+disabled = false
+
+[directory.substitutions]
+"Desktop" = "🖥️"
+"Documents" = "📃"
+"Downloads" = "💾 "
+"Pictures" = "🖼️"
+# "Coding" = "󰲋 "
+
+[git_branch]
+style = "bold red"
+
+[nodejs]
+version_format = "${raw}"
+symbol = "🍀 "
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+not_capable_style = "bold red"
+
+[bun]
+version_format = "v${raw}"
+symbol = "🍞 "
+detect_files = ["bun.lockb", "bunfig.toml"]
+
+[rust]
+version_format = "v${raw}"
+symbol = "🦀 "
+detect_files = ["Cargo.toml"]
+detect_extensions = ["rs"]
+
+[python]
+version_format = "v${raw}"
+detect_files = [
+  "requirements.txt",
+  ".python-version",
+  "pyproject.toml",
+  "Pipfile",
+  "tox.ini",
+  "setup.py",
+  "__init__.py",
+]
+python_binary = ["python", "python3", "python2"]
+
+[localip]
+ssh_only = true
+format = '[$localipv4 ](bold red bg:black)'
+disabled = false
+
+# right-fill (right-prompt)
+[battery]
+full_symbol = "🌱"
+charging_symbol = "🌲"
+discharging_symbol = "🌵"
+empty_symbol = ""
+format = "[$symbol$battery $percentage ]($style)"
+disabled = false
+
+[[battery.display]]
+style = "fg:yellow bg:black"
+threshold = 100
+
+[time]
+style = "fg:yellow bg:black"
+format = "[$time ]($style)"
+disabled = false
+
+
+[fill]
+symbol = "."
+style = "bold black"
