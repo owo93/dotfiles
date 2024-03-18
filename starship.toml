@@ -27,8 +27,9 @@ error_symbol = "[→](bold red)"
 disabled = false
 
 [shell]
+bash_indicator = "🥑"
 zsh_indicator = "🌹"
-nu_indicator = "💐"
+nu_indicator = "✨"
 powershell_indicator = "🌸"
 unknown_indicator = "❓"
 style = "bg:black"
