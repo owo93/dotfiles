@@ -101,7 +101,7 @@ disabled = false
 
 [[battery.display]]
 style = "fg:yellow bg:black"
-threshold = 100
+threshold = 101
 
 [time]
 style = "fg:yellow bg:black"
