@@ -5,20 +5,21 @@ format = """
 $shell\
 $localip\
 $directory\
+$git_status\
 [ ](black)\
 $git_branch\
-$git_status\
 $docker_context\
 $nodejs\
 $bun\
 $rust\
-$python\
-$fill\
-[ ](black)\
-$battery\
-[](black)
+$python
 $character\
 """
+
+# $fill\
+# [ ](black)\
+# $battery\
+# [](black)
 
 #main-prompt
 [character]
@@ -53,6 +54,13 @@ disabled = false
 
 [git_branch]
 style = "bold red"
+
+[git_status]
+style = "bg:black fg:bold red"
+format = "[$all_status$all_diverged$all_stashed$all_ahead_behind]($style)"
+ahead = "⇡${count}"
+diverged = "⇕${count}"
+behind = "⇣${count}"
 
 [nodejs]
 version_format = "${raw}"
@@ -102,12 +110,6 @@ disabled = false
 [[battery.display]]
 style = "fg:yellow bg:black"
 threshold = 101
-
-[time]
-style = "fg:yellow bg:black"
-format = "[$time ]($style)"
-disabled = false
-
 
 [fill]
 symbol = "."
