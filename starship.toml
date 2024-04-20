@@ -9,17 +9,16 @@ $git_status\
 [ ](black)\
 $git_branch\
 $docker_context\
-$nodejs\
-$bun\
 $rust\
+$nodejs\
 $python
 $character\
 """
-
-# $fill\
 # [ ](black)\
 # $battery\
+# $time\
 # [](black)
+
 
 #main-prompt
 [character]
@@ -38,11 +37,13 @@ format = "[$indicator ]($style)"
 disabled = false
 
 [directory]
-truncation_length = 3
-read_only = "🔒"
-read_only_style = "yellow"
+truncation_length = 8
+truncate_to_repo = true
+use_os_path_sep = true
+repo_root_style = "fg:bold purple bg:black"
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)"
 style = "fg:purple bg:black"
-format = "[$path ]($style)($lock_symbol)($lock_style)"
+format = "[$path]($style)"
 disabled = false
 
 [directory.substitutions]
@@ -53,32 +54,31 @@ disabled = false
 # "Coding" = "󰲋 "
 
 [git_branch]
-style = "bold red"
+format = "[$symbol$branch ]($style)"
+style = "red"
 
 [git_status]
 style = "bg:black fg:bold red"
-format = "[$all_status$all_diverged$all_stashed$all_ahead_behind]($style)"
+format = "[ $all_status$all_diverged$all_stashed$all_ahead_behind]($style)"
 ahead = "⇡${count}"
 diverged = "⇕${count}"
 behind = "⇣${count}"
 
-[nodejs]
-version_format = "${raw}"
-symbol = "🍀 "
-detect_files = ["package.json", ".node-version", ".nvmrc"]
-detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
-not_capable_style = "bold red"
-
-[bun]
-version_format = "v${raw}"
-symbol = "🍞 "
-detect_files = ["bun.lockb", "bunfig.toml"]
-
 [rust]
 version_format = "v${raw}"
-symbol = "🦀 "
+symbol = "🦀"
 detect_files = ["Cargo.toml"]
 detect_extensions = ["rs"]
+format = "[$symbol ($version )]($style)"
+style = "bold #f76707"
+
+[nodejs]
+version_format = "v${major}"
+symbol = " "
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+format = "[$symbol($version )]($style)"
+style = "green"
 
 [python]
 version_format = "v${raw}"
@@ -92,10 +92,13 @@ detect_files = [
   "__init__.py",
 ]
 python_binary = ["python", "python3", "python2"]
+format = "[$symbol($version )]($style)"
+style = "blue"
 
 [localip]
 ssh_only = true
-format = '[$localipv4 ](bold red bg:black)'
+format = '[$localipv4 ]($style)'
+style = "bg:black fg:cyan"
 disabled = false
 
 # right-fill (right-prompt)
@@ -108,9 +111,15 @@ format = "[$symbol$battery $percentage ]($style)"
 disabled = false
 
 [[battery.display]]
-style = "fg:yellow bg:black"
+style = "fg:white bg:black"
 threshold = 101
 
 [fill]
 symbol = "."
 style = "bold black"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+format = "[🕒 $time]($style)"
+style = "bg:black fg:white"
