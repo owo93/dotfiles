@@ -1,0 +1,296 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	// Startup
+	"autosave": "on_focus_change",
+	"autoscroll_on_clicks": true,
+	"confirm_quit": true,
+	"restore_on_startup": "launchpad",
+	"use_system_prompts": true,
+
+	// Extensions
+	"auto_install_extensions": {
+		"wakatime": true,
+	},
+
+	// Keybindings
+	"base_keymap": "VSCode",
+	"vim_mode": true,
+	"vim": {
+		"use_smartcase_find": true,
+		"toggle_relative_line_numbers": true,
+		"highlight_on_yank_duration": 250,
+	},
+
+	// Appearance
+	"theme": {
+		"mode": "dark",
+		"light": "Crimson Light",
+		"dark": "Solarized Osaka",
+	},
+	"icon_theme": "Colored Zed Icons Theme Dark",
+	"theme_overrides": {
+		"Crimson Dark": {
+			"editor.background": "#151218",
+			"editor.gutter.background": "#151218",
+			"toolbar.background": "#151218",
+			"tab.active_background": "#151218",
+			"terminal.background": "#151218",
+			"border": "#c4c4c420",
+		},
+		"Solarized Osaka": {
+			"editor.line_number": "#7A5E00",
+			"editor.indent_guide_active": "#586E7599",
+			"panel.indent_guide_active": "#586E7599",
+			"panel.indent_guide_hover": "#586E75CC",
+			"syntax": {
+				"hint": {
+					"color": "#586E75",
+				},
+				"punctuation.bracket": {
+					"color": "#CB4B16",
+				},
+				"variable": {
+					"color": "#CB4B16",
+				},
+			},
+			"players": [
+				{
+					"cursor": "#ADB8B8",
+					"background": "#541232",
+					"selection": "#541232",
+				},
+			],
+		},
+	},
+	"buffer_font_family": "Maple Mono NF",
+	"buffer_font_size": 11.0,
+	"buffer_font_weight": 400.0,
+	"buffer_line_height": {
+		"custom": 2.4,
+	},
+	"buffer_font_features": {
+		"calt": true,
+		"cv02": true,
+		"cv05": true,
+		"cv61": true,
+		"cv63": true,
+	},
+
+	"ui_font_family": ".ZedSans",
+	"ui_font_weight": 400.0,
+	"ui_font_size": 14.0,
+
+	"tab_bar": {
+		"show_pinned_tabs_in_separate_row": false,
+		"show_nav_history_buttons": false,
+		"show": true,
+	},
+	"tabs": {
+		"file_icons": true,
+		"git_status": true,
+		"show_diagnostics": "errors",
+	},
+	"status_bar": {
+		"active_encoding_button": "non_utf8",
+		"cursor_position_button": false,
+		"active_language_button": true,
+	},
+	"toolbar": {
+		"breadcrumbs": true,
+		"quick_actions": true,
+		"selections_menu": false,
+		"code_actions": true,
+	},
+	"title_bar": {
+		"show_branch_icon": true,
+	},
+
+	// Editor
+	"hard_tabs": true,
+	"tab_size": 2,
+	"indent_guides": {
+		"background_coloring": "disabled",
+		"coloring": "fixed",
+		"active_line_width": 1,
+		"enabled": true,
+	},
+
+	"relative_line_numbers": "enabled",
+	"current_line_highlight": "none",
+	"scrollbar": {
+		"show": "never",
+	},
+	"soft_wrap": "editor_width",
+	"text_rendering_mode": "platform_default",
+
+	// Behaviour
+	"show_completions_on_input": true,
+	"excerpt_context_lines": 3,
+	"expand_excerpt_lines": 10,
+	"show_signature_help_after_edits": true,
+	"double_click_in_multibuffer": "open",
+	"diagnostics": {
+		"inline": {
+			"enabled": true,
+		},
+	},
+	"inlay_hints": {
+		"enabled": false,
+		"toggle_on_modifiers_press": {
+			"alt": true,
+		},
+	},
+	"edit_predictions": {
+		"provider": "copilot",
+		"mode": "subtle",
+	},
+	"git": {
+		"inline_blame": {
+			"enabled": false,
+		},
+	},
+	"debugger": {
+		"button": false,
+	},
+	"search": {
+		"button": false,
+	},
+	"terminal": {
+		"copy_on_select": true,
+		"button": false,
+		"minimum_contrast": 24,
+		"detect_venv": {
+			"on": { "activate_script": "default" },
+		},
+		"font_features": {
+			"calt": true,
+			"cv02": true,
+			"cv05": true,
+			"cv61": true,
+			"cv63": true,
+		},
+	},
+
+	// Panels
+	"bottom_dock_layout": "contained",
+	"notification_panel": {
+		"default_width": 300.0,
+		"dock": "left",
+	},
+	"collaboration_panel": {
+		"default_width": 300.0,
+		"dock": "left",
+	},
+	"project_panel": {
+		"default_width": 300.0,
+		"auto_fold_dirs": true,
+		"hide_root": true,
+		"button": true,
+		"dock": "right",
+		"git_status": true,
+		"file_icons": true,
+		"folder_icons": true,
+		"hide_gitignore": false,
+		"starts_open": false,
+		"indent_size": 12.0,
+		"entry_spacing": "standard",
+	},
+	"outline_panel": {
+		"default_width": 300.0,
+		"folder_icons": true,
+		"dock": "right",
+	},
+	"git_panel": {
+		"default_width": 300.0,
+		"tree_view": true,
+		"dock": "right",
+	},
+
+	// Agent
+	"agent": {
+		"default_width": 300.0,
+		"use_modifier_to_send": true,
+		"show_turn_stats": true,
+		"play_sound_when_agent_done": true,
+		"inline_assistant_model": {
+			"provider": "copilot_chat",
+			"model": "claude-sonnet-4",
+		},
+		"default_profile": "ask",
+		"default_model": {
+			"provider": "copilot_chat",
+			"model": "grok-code-fast-1",
+		},
+		"button": false,
+		"dock": "right",
+		"model_parameters": [],
+	},
+	"agent_servers": {
+		"opencode": {
+			"favorite_models": ["opencode/kimi-k2.5-free"],
+			"type": "registry",
+		},
+	},
+	"agent_buffer_font_size": 11.0,
+	"agent_ui_font_size": 14.0,
+
+	// Languages
+	"languages": {
+		"Rust": {
+			"formatter": "language_server",
+			"auto_indent": true,
+			"auto_indent_on_paste": true,
+			"show_wrap_guides": true,
+			"wrap_guides": [100],
+			"inlay_hints": {
+				"enabled": true,
+			},
+			"tab_size": 4,
+			"hard_tabs": false,
+		},
+	},
+
+	// Remote
+	"wsl_connections": [
+		{
+			"distro_name": "Ubuntu",
+			"user": null,
+			"projects": [
+				{
+					"paths": ["/home/o93/projects/flax-illuminant-estimation"],
+				},
+				{
+					"paths": ["/home/o93/projects/jakyao"],
+				},
+				{
+					"paths": ["/home/o93/projects/mysk-api"],
+				},
+				{
+					"paths": ["/home/o93/projects/owo93"],
+				},
+				{
+					"paths": ["/home/o93/projects/pdf-fill-form"],
+				},
+				{
+					"paths": ["/home/o93/projects/portfolio"],
+				},
+				{
+					"paths": ["/home/o93/projects/sk-openhouse-api"],
+				},
+				{
+					"paths": ["/home/o93/projects/tower-middleware"],
+				},
+				{
+					"paths": ["/home/o93/projects/vit-playground"],
+				},
+			],
+		},
+	],
+}
