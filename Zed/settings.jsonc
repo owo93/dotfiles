@@ -263,58 +263,7 @@
     {
       "distro_name": "Ubuntu",
       "user": null,
-      "projects": [
-        {
-          "paths": [
-            "/home/o93/projects/flax-illuminant-estimation"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/jakyao"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/mysk-api"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/owo93"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/pdf-fill-form"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/portfolio"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/rsbtc"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/sk-openhouse-api"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/tower-middleware"
-          ],
-        },
-        {
-          "paths": [
-            "/home/o93/projects/vit-playground"
-          ],
-        },
-      ],
+      "projects": [],
     },
   ],
 }
