@@ -13,10 +13,12 @@
   "confirm_quit": true,
   "restore_on_startup": "launchpad",
   "use_system_prompts": true,
+
   // Extensions
   "auto_install_extensions": {
     "wakatime": true,
   },
+
   // Keybindings
   "base_keymap": "VSCode",
   "vim_mode": true,
@@ -25,13 +27,14 @@
     "toggle_relative_line_numbers": true,
     "highlight_on_yank_duration": 250,
   },
+
   // Appearance
   "theme": {
     "mode": "dark",
     "light": "Crimson Light",
     "dark": "Solarized Osaka",
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": "Warm Charmed Icons",
   "theme_overrides": {
     "Crimson Dark": {
       "editor.background": "#151218",
@@ -46,49 +49,51 @@
       "editor.indent_guide_active": "#586E7599",
       "panel.indent_guide_active": "#586E7599",
       "panel.indent_guide_hover": "#586E75CC",
-      "syntax": {
-        "hint": {
-          "color": "#586E75",
-        },
-        "punctuation.bracket": {
-          "color": "#CB4B16",
-        },
-        "variable": {
-          "color": "#CB4B16",
-        },
-      },
       "players": [
         {
-          "cursor": "#ADB8B8",
-          "background": "#541232",
+          "cursor": "#f6d5e5",
+          "background": "#d22d7d",
           "selection": "#541232",
         },
       ],
     },
     "Eclat Vaporeux": {
       "syntax": {
-        "hint": {
-          "color": "#5C5C5C"
-        },
+        "hint": { "color": "#5C5C5C" },
       },
     },
   },
-  "buffer_font_family": "Maple Mono NF",
-  "buffer_font_size": 11.0,
+  "buffer_font_family": "CommitMonoV143",
+  "buffer_font_size": 12.0,
   "buffer_font_weight": 400.0,
   "buffer_line_height": {
-    "custom": 2.4,
+    "custom": 2.2,
   },
+  // Commit mono
   "buffer_font_features": {
-    "calt": true,
-    "cv02": true,
-    "cv05": true,
-    "cv61": true,
-    "cv63": true,
+    "cv08": true,
+    "cv11": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss04": true,
+    "ss05": true,
   },
-  "ui_font_family": ".ZedSans",
+  // Maple mono
+  // "buffer_font_features": {
+  // 	"calt": true,
+  // 	"cv02": true,
+  // 	"cv05": true,
+  // 	"cv64": true,
+  // 	"ss08": true,
+  // 	"ss09": true,
+  // 	"ss10": true,
+  // },
+
+  "ui_font_family": "SF Thonburi",
   "ui_font_weight": 400.0,
   "ui_font_size": 14.0,
+
   "tab_bar": {
     "show_pinned_tabs_in_separate_row": false,
     "show_nav_history_buttons": false,
@@ -113,15 +118,17 @@
   "title_bar": {
     "show_branch_icon": true,
   },
+
   // Editor
-  "hard_tabs": true,
   "tab_size": 2,
+  "hard_tabs": false,
   "indent_guides": {
     "background_coloring": "disabled",
     "coloring": "fixed",
     "active_line_width": 1,
     "enabled": true,
   },
+
   "relative_line_numbers": "enabled",
   "current_line_highlight": "none",
   "scrollbar": {
@@ -129,6 +136,7 @@
   },
   "soft_wrap": "editor_width",
   "text_rendering_mode": "platform_default",
+
   // Behaviour
   "show_completions_on_input": true,
   "excerpt_context_lines": 3,
@@ -162,24 +170,17 @@
     "button": false,
   },
   "terminal": {
+    "font_family": "CommitMono Nerd Font Propo",
     "copy_on_select": true,
     "button": false,
-    "minimum_contrast": 24,
+    "minimum_contrast": 32,
     "detect_venv": {
-      "on": {
-        "activate_script": "default"
-      },
-    },
-    "font_features": {
-      "calt": true,
-      "cv02": true,
-      "cv05": true,
-      "cv61": true,
-      "cv63": true,
+      "on": { "activate_script": "default" },
     },
   },
+
   // Panels
-  "bottom_dock_layout": "contained",
+  "bottom_dock_layout": "right_aligned",
   "notification_panel": {
     "default_width": 300.0,
     "dock": "left",
@@ -212,6 +213,7 @@
     "tree_view": true,
     "dock": "right",
   },
+
   // Agent
   "agent": {
     "default_width": 300.0,
@@ -227,43 +229,87 @@
       "provider": "copilot_chat",
       "model": "grok-code-fast-1",
     },
-    "button": false,
-    "dock": "right",
+    "button": true,
+    "dock": "left",
     "model_parameters": [],
   },
   "agent_servers": {
     "opencode": {
-      "favorite_models": [
-        "opencode/kimi-k2.5-free"
-      ],
+      "favorite_models": ["opencode/kimi-k2.5-free"],
       "type": "registry",
     },
   },
   "agent_buffer_font_size": 11.0,
   "agent_ui_font_size": 14.0,
+
   // Languages
   "languages": {
     "Rust": {
+      "semantic_tokens": "off",
       "formatter": "language_server",
-      "auto_indent": true,
       "auto_indent_on_paste": true,
       "show_wrap_guides": true,
-      "wrap_guides": [
-        100
-      ],
+      "wrap_guides": [100],
       "inlay_hints": {
         "enabled": true,
       },
       "tab_size": 4,
       "hard_tabs": false,
     },
+    "Python": {
+      "language_servers": ["ty", "!basedpyright"],
+    },
   },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true,
+        },
+        "inlayHints": {
+          "closureReturnTypeHints": { "enable": "always" },
+        },
+      },
+    },
+  },
+
   // Remote
   "wsl_connections": [
     {
       "distro_name": "Ubuntu",
       "user": null,
-      "projects": [],
+      "projects": [
+        {
+          "paths": ["/home/o93/projects/flax-illuminant-estimation"],
+        },
+        {
+          "paths": ["/home/o93/projects/jakyao"],
+        },
+        {
+          "paths": ["/home/o93/projects/mysk-api"],
+        },
+        {
+          "paths": ["/home/o93/projects/owo93"],
+        },
+        {
+          "paths": ["/home/o93/projects/pdf-fill-form"],
+        },
+        {
+          "paths": ["/home/o93/projects/portfolio"],
+        },
+        {
+          "paths": ["/home/o93/projects/rsbtc"],
+        },
+        {
+          "paths": ["/home/o93/projects/sk-openhouse-api"],
+        },
+        {
+          "paths": ["/home/o93/projects/tower-middleware"],
+        },
+        {
+          "paths": ["/home/o93/projects/vit-playground"],
+        },
+      ],
     },
   ],
 }
