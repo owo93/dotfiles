@@ -136,6 +136,8 @@
   },
   "soft_wrap": "editor_width",
   "text_rendering_mode": "platform_default",
+  "vertical_scroll_margin": 999,
+  "scroll_beyond_last_line": "one_page",
 
   // Behaviour
   "show_completions_on_input": true,
