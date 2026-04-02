@@ -275,6 +275,16 @@
     },
   },
 
+  // Profiles
+  "profiles": {
+    "Screenshare": {
+      "theme": "Crimson Light",
+      "buffer_font_family": "Fira Code",
+      "buffer_font_size": 16.0,
+      "buffer_font_weight": 450.0,
+    },
+  },
+
   // Remote
   "wsl_connections": [
     {
