@@ -25,7 +25,7 @@
   "vim": {
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true,
-    "highlight_on_yank_duration": 250,
+    "highlight_on_yank_duration": 200,
   },
 
   // Appearance
@@ -95,6 +95,7 @@
     "active_encoding_button": "non_utf8",
     "cursor_position_button": false,
     "active_language_button": true,
+    "line_endings_button": true,
   },
   "toolbar": {
     "breadcrumbs": true,
@@ -107,15 +108,12 @@
   },
 
   // Editor
-  "tab_size": 2,
-  "hard_tabs": false,
   "indent_guides": {
     "background_coloring": "disabled",
     "coloring": "fixed",
     "active_line_width": 1,
     "enabled": true,
   },
-
   "relative_line_numbers": "enabled",
   "current_line_highlight": "none",
   "scrollbar": {
@@ -170,10 +168,6 @@
 
   // Panels
   "bottom_dock_layout": "right_aligned",
-  "notification_panel": {
-    "default_width": 300.0,
-    "dock": "left",
-  },
   "collaboration_panel": {
     "default_width": 300.0,
     "dock": "left",
@@ -208,7 +202,7 @@
     "default_width": 300.0,
     "use_modifier_to_send": true,
     "show_turn_stats": true,
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4",
@@ -224,6 +218,9 @@
   },
   "agent_servers": {
     "opencode": {
+      "favorite_config_option_values": {
+        "mode": ["plan"],
+      },
       "favorite_models": ["opencode/kimi-k2.5-free"],
       "type": "registry",
     },
@@ -246,8 +243,31 @@
       "hard_tabs": false,
     },
     "Python": {
-      "language_servers": ["ty", "!basedpyright"],
+      "language_servers": ["ty", "ruff", "!basedpyright"],
     },
+    "YAML": {
+      "language_servers": [
+        "yaml-language-server",
+        "!docker-compose",
+        "!gh-actions-language-server",
+      ],
+    },
+    "JSON": {
+      "tab_size": 2,
+      "hard_tabs": false,
+    },
+    "JSONC": {
+      "tab_size": 2,
+      "hard_tabs": false,
+    },
+  },
+  "file_types": {
+    "GitHub Actions": [
+      "**/.github/workflows/*.yml",
+      "**/.github/workflows/*.yaml",
+    ],
+    "Dockerfile": ["Dockerfile*", "Dockerfile.*"],
+    "Docker Compose": ["docker-compose.yml", "docker-compose.yaml"],
   },
   "lsp": {
     "rust-analyzer": {
@@ -265,10 +285,27 @@
   // Profiles
   "profiles": {
     "Screenshare": {
-      "theme": "Crimson Light",
-      "buffer_font_family": "Fira Code",
-      "buffer_font_size": 16.0,
-      "buffer_font_weight": 450.0,
+      "settings": {
+        "theme": "Crimson Light",
+        "buffer_font_family": "Fira Code",
+        "buffer_font_size": 16.0,
+        "buffer_font_weight": 450.0,
+        "gutter": {
+          "line_numbers": false,
+        },
+        "tab_bar": {
+          "show": false,
+        },
+        "toolbar": {
+          "agent_review": false,
+          "breadcrumbs": false,
+          "code_actions": false,
+          "quick_actions": false,
+          "selections_menu": false,
+        },
+        "vertical_scroll_margin": 0,
+        "show_completion_documentation": false,
+      },
     },
   },
 
@@ -303,6 +340,11 @@
           "paths": ["/home/o93/projects/sk-openhouse-api"],
         },
       ],
+    },
+    {
+      "distro_name": "docker-desktop",
+      "user": null,
+      "projects": [],
     },
   ],
 }

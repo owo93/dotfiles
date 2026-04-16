@@ -1,1 +1,2 @@
-* linguist-language=jsonc
+* text eol=lf
+*.json linguist-language=jsonc

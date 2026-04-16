@@ -35,7 +35,6 @@
         "editor.foreground": "#839496",
         "editor.gutter.background": "#001014",
         "editor.highlighted_line.background": "#002b36",
-        "editor.indent_guide": "#073642",
         "editor.indent_guide_active": "#586e7599",
         "editor.invisible": "#586e75",
         "editor.line_number": "#7a5e00",
