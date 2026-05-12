@@ -1,0 +1,62 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = "$username$hostname$directory$python$nix_shell$cmd_duration$character"
+right_format = """$git_branch$git_state$git_status$git_metrics$all$time"""
+
+[directory]
+truncation_length = 1
+truncation_symbol = ""
+style = "purple"
+fish_style_pwd_dir_length = 1
+
+[character]
+success_symbol = "[❯](dimmed green)[❯](green)[❯](bright-green)"
+error_symbol = "[❯](dimmed red)[❯](red)[❯](bright-red)"
+vimcmd_symbol = "[❮](green)"
+
+
+[git_metrics]
+disabled = false
+
+[git_branch]
+format = "[$branch]($style)"
+style = "italic bright-yellow"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](yellow) ($ahead_behind$stashed)]($style) "
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+[rust]
+format = 'via [$symbol($version $toolchain )]($style)'
+
+[package]
+format = 'on [$symbol$version]($style) '
+display_private = true
+disabled = false
+
+[time]
+format = "[$time]($style)"
+time_format = "%R"
+style = "bright-black"
+disabled = false
